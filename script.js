@@ -19,6 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /**
+   * Add to cart buttons - scroll to shop section
+   */
+  var addToCartButtons = document.querySelectorAll('.btn-cart');
+  var shopSection = document.querySelector('.sixth-section');
+  addToCartButtons.forEach(function(button) {
+    button.addEventListener('click', function(event){
+      event.preventDefault();
+      shopSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    });
+  });
+
+  /**
    * Tabs
    */
   var activeTabClass = 'tab--active';
