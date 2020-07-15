@@ -319,7 +319,7 @@ main {
 
 .tabs-content {
   padding-top: 48px;
-  min-height: 300px;
+  min-height: 356px;
 }
 
 .tab-content {
@@ -332,10 +332,29 @@ main {
   display: block;
 }
 
+.tab-content ul {
+  list-style: disc;
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+
 .tab-content h2 {
   font-size: 20px;
   line-height: 26px;
   padding-bottom: 24px;
+}
+
+.tab-content h3 {
+  font-size: 20px;
+  line-height: 26px;
+  padding-bottom: 24px;
+  font-weight: bold;
+}
+
+.tab-content h3:not(:first-of-type) {
+  margin-top: 24px;
 }
 
 .third-section,
