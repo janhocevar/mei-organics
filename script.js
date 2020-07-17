@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   /**
+   * Smoothscrool polyfill
+   */
+  polyfill();
+
+  /**
    * Language selector
    */
   var languageSelectorEl = document.querySelector('.language-selector');
@@ -17,6 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
   topBannerCloseEl.addEventListener('click', function() {
     topBannerEl.classList.add('top-banner--hidden');
   });
+
+  /**
+   * Animate hero product image
+   */
+  var heroProduct = document.querySelector('.hero-product');
+  heroProduct.classList.add('hero-product--visible');
 
   /**
    * Add to cart buttons - scroll to shop section
@@ -157,6 +168,15 @@ document.addEventListener('DOMContentLoaded', function() {
   var preselectProduct = new ScrollMagic.Scene({ triggerElement: '.sixth-section' })
     .setClassToggle('.shop-option--preselect', 'shop-option--selected')
     .reverse(false)
+    .addTo(controller);
+
+  var bottomHeroTween = new TimelineMax()
+    .add([
+      TweenMax.fromTo('.bottom-hero-product', 2, { y: 80 }, { y: 0, ease: Linear.easeNone, immediateRender: false })
+    ]);
+
+  bottomHeroAnimation = new ScrollMagic.Scene({triggerElement: '.bottom-hero', duration: 300})
+    .setTween(bottomHeroTween)
     .addTo(controller);
 
   /**
