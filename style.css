@@ -865,3 +865,126 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;  
 }
+
+.visible-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .visible-mobile {
+    display: inherit;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  .wrapper {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  main {
+    padding-top: 146px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .first-section,
+  .shop-section,
+  .feedback-section {
+    display: block;
+  }
+
+  .second-section-row,
+  .top-two-images {
+    display: flex;
+  }
+
+  .top-two-images {
+    margin-bottom: 0;
+  }
+
+  .second-section-content h2 {
+    font-size: 20px;
+    line-height: 26px;
+    padding: 0 24px 48px;
+  }
+
+  .second-section-content {
+    padding-bottom: 0;
+  }
+
+  .tabs {
+    overflow-y: auto;
+  }
+
+  .section-advantages {
+    flex-direction: column;
+  }
+
+  .first-section-content {
+    padding: 32px 24px 0;
+  }
+
+  .hero-product {
+    height: 320px;
+    width: 73px;
+    right: 20px;
+  }
+
+  .top-banner {
+    justify-content: flex-start;
+  }
+
+  .top-banner-item:not(:last-child) {
+    margin-right: 0;
+    margin-left: 24px;
+  }
+
+  .top-banner-item:nth-child(2) {
+    display: none;
+  }
+
+  .language-selector-active {
+    background: none;
+    width: auto;
+    height: auto;
+    color: #FFF;
+    border: none;
+  }
+
+  header {
+    padding: 0 24px;
+    width: auto;
+    right: 0;
+  }
+
+  .header-logo {
+    width: 68px;
+    height: 31px;
+    margin-right: 16px;
+  }
+
+  .btn {
+    padding: 0 16px;
+  }
+
+  .header-inner {
+    justify-content: space-between;
+  }
+
+  .first-section .btn {
+    max-width: 100%;
+  }
+
+  .second-section {
+    margin-top: 50px;
+  }
+
+  .tab-content {
+    padding: 0 24px;
+  }
+}
