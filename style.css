@@ -3,6 +3,7 @@
 */
 :root {
   --color-main: #AF8164;
+  --color-main-hover: #bf957b;
   --color-secondary: #38B7C1;
   --desktop-page-width: 1180px;
   --desktop-tiny-wrapper-width: 558px;
@@ -108,6 +109,10 @@ header {
   font-size: 14px;
   background: var(--color-main);
   text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--color-main-hover);
 }
 
 .btn-icon {
@@ -530,6 +535,10 @@ main {
   background: #000;
   border-bottom: 8px solid var(--color-secondary);
   font-size: 20px;
+}
+
+.btn--add-to-cart:hover {
+  background: var(--color-secondary);
 }
 
 .btn--add-to-cart img {
