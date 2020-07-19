@@ -1156,4 +1156,13 @@ footer {
     font-size: 38px;
     line-height: 50px;
   }
+
+  .bottom-hero {
+    height: 624px;
+  }
+
+  .bottom-hero-product {
+    width: 90px;
+    height: 403px;
+  }
 }
