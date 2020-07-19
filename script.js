@@ -192,4 +192,27 @@ document.addEventListener('DOMContentLoaded', function() {
       el.target.classList.add(selectedClass);
     });
   });
+
+  /**
+   * Mobile swipe
+   */
+  var element = document.querySelector('.swipe');
+  var activeNavigationItemClass = 'swipe-navigation-item--active';
+  window.mySwipe = new Swipe(element, {
+    startSlide: 0,
+    auto: 4000,
+    draggable: false,
+    autoRestart: false,
+    continuous: true,
+    disableScroll: true,
+    stopPropagation: true,
+    callback: function(index, element) { },
+    transitionEnd: function(index, element) {
+      var activeNavigationItem = document.querySelector('.' + activeNavigationItemClass);
+      activeNavigationItem.classList.remove(activeNavigationItemClass);
+
+      var newActiveNavigationItem = document.querySelectorAll('.swipe-navigation-item')[index];
+      newActiveNavigationItem.classList.add(activeNavigationItemClass);
+    }
+  });
 });

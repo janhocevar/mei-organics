@@ -424,6 +424,11 @@ main {
   justify-content: center;
 }
 
+.advantage-icon {
+  display: flex;
+  justify-content: center;
+}
+
 .advantage:not(:last-child) {
   margin-right: 100px; 
 }
@@ -434,6 +439,7 @@ main {
   font-weight: 600;
   color: #FFF;
   margin-top: 16px;
+  text-align: center;
 }
 
 .shop-section {
@@ -882,6 +888,8 @@ footer {
   .wrapper {
     max-width: 100%;
     padding: 0;
+    margin: 0;
+    width: 100%;
   }
 
   main {
@@ -893,18 +901,40 @@ footer {
   }
 
   .first-section,
-  .shop-section,
   .feedback-section {
     display: block;
   }
 
   .second-section-row,
-  .top-two-images {
+  .top-two-images,
+  .shop-section {
     display: flex;
   }
 
+  .shop-section {
+    align-items: unset;
+    flex-direction: column;
+  }
+
   .top-two-images {
-    margin-bottom: 0;
+    margin-bottom: 10px;
+  }
+
+  .top-two-images img {
+    width: 50%;
+  }
+
+  .shop-customizer {
+    order: 2;
+    padding: 80px 24px 0;
+  }
+
+  .perks {
+    flex-direction: column;
+  }
+
+  .perk:not(:last-child) {
+    margin: 0 0 32px;
   }
 
   .second-section-content h2 {
@@ -921,8 +951,12 @@ footer {
     overflow-y: auto;
   }
 
-  .section-advantages {
-    flex-direction: column;
+  .tabs .tab:first-child {
+    margin-left: 50px;
+  }
+
+  .tabs .tab:last-child {
+    margin-left: 50px;
   }
 
   .first-section-content {
@@ -986,5 +1020,101 @@ footer {
 
   .tab-content {
     padding: 0 24px;
+  }
+
+  .advantage:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  .swipe-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swipe-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .swipe-navigation-item {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #FFF;
+    border-radius: 8px;
+  }
+
+  .swipe-navigation-item--active {
+    background: #FFF;
+  }
+
+  .swipe-navigation-item:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .fourth-section,
+  .fifth-section {
+    margin-bottom: 0;
+  }
+
+  .fifth-section {
+    height: 210px;
+  }
+
+  .advantage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .advantage-icon,
+  .advantage-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .advantage-icon {
+    align-items: center;
+  }
+
+  .advantage-icon img {
+    margin: 0 auto;
+  }
+
+  .section-advantages {
+    padding-top: 20px;
+  }
+
+  .instagram-handle {
+    display: none;
+  }
+
+  .instagram-feed {
+    overflow-x: auto;
+  }
+
+  .feedback-grade {
+    justify-content: center;
+  }
+ 
+  .feedback-lines {
+    padding: 0 0 0 24px;
+  }
+
+  .feedback-satisfaction-number,
+  .feedback-satisfaction-text {
+    text-align: center;
+  }
+
+  .feedback-users {
+    margin-top: 26px;
+    padding: 0 24px;
+  }
+
+  .btn--feedback {
+    max-width: 100%;
   }
 }
