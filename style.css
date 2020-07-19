@@ -1165,4 +1165,8 @@ footer {
     width: 90px;
     height: 403px;
   }
+
+  .shop-option-price {
+    min-width: 60px;
+  }
 }
