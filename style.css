@@ -948,15 +948,21 @@ footer {
   }
 
   .tabs {
+    justify-content: flex-start;
     overflow-y: auto;
+    padding: 0 24px;
   }
 
-  .tabs .tab:first-child {
-    margin-left: 50px;
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre;
   }
 
-  .tabs .tab:last-child {
-    margin-left: 50px;
+  ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
   }
 
   .first-section-content {
