@@ -197,16 +197,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var circleLogoShow = new ScrollMagic.Scene({ triggerElement: '.first-section', duration: 100, offset: 300 })
       .setTween(circleLogoShowTween)
       .addTo(controller);
-  }
 
-  var imagesPinOffset = isMobile ? 100 : 400;
-  imagesPin = new ScrollMagic.Scene({
-    triggerElement: '.fourth-section',
-    duration: 1200,
-    offset: imagesPinOffset,
-  })
-    .setPin('.top-two-images')
-    .addTo(controller);
+    imagesPin = new ScrollMagic.Scene({
+      triggerElement: '.fourth-section',
+      duration: 600,
+      offset: 300,
+    })
+      .setPin('.fourth-section')
+      .addTo(controller);
+  }
 
   /**
    * Shop quantity selector

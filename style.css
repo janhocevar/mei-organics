@@ -465,14 +465,6 @@ main {
   width: 100%;
 }
 
-.fourth-section-last-image-container {
-  position: relative;
-  top: -1200px;
-  margin-bottom: -1650px;
-  padding-bottom: 500px;
-  background: #FFF;
-}
-
 .fifth-section {
   background: #000;
   height: 224px;
@@ -1183,6 +1175,7 @@ footer {
 
   .fifth-section {
     height: 210px;
+    margin-top: -600px;
   }
 
   .advantage {
@@ -1256,7 +1249,7 @@ footer {
   }
 
   .shop-option-price {
-    min-width: 60px;
+    min-width: 65px;
   }
 
   .shop-customizer-mobile-breakpoint {
@@ -1285,9 +1278,5 @@ footer {
   .mei-organics-circle img {
     width: 35px;
     height: 16px;
-  }
-
-  .fourth-section-last-image-container {
-    margin-bottom: -1700px;
   }
 }
