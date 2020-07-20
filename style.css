@@ -1181,4 +1181,14 @@ footer {
     position: absolute;
     top: -100px;
   }
+
+  .language-selector--opened .language-selector-active,
+  .language-selector-active:hover {
+    background: none;
+    color: #FFF;
+  }
+
+  .language-selector {
+    margin: 0;
+  }
 }
