@@ -109,19 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
           instagramPhotosInnerEl.appendChild(newDiv);
         });
 
-        var newDiv = document.createElement('a');
-        newDiv.classList.add('instagram-photo');
-        newDiv.classList.add('instagram-photo--link');
-        newDiv.setAttribute('href', 'https://www.instagram.com/mei_organics/');
-        newDiv.setAttribute('target', '_blank');
-        var newContent = document.createTextNode('Open profile');
-        newDiv.appendChild(newContent);
-        instagramPhotosInnerEl.appendChild(newDiv);
-
-        /**
-         * Number of photos + 1 element that is link to the profile
-         */
-        instagramPhotosInnerEl.style.width = (images.length + 1) * 230 + 'px';
+        instagramPhotosInnerEl.style.width = images.length * offsetSize + 'px';
 
         var instagramLoadingEl = document.querySelector('.loading-instagram-photos');
         instagramLoadingEl.classList.add('loading-instagram-photos--hidden');
@@ -147,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             /**
              * If on last picture, return
              */
-            if ((numberOfImagesOnScreen + picturesOffset) === images.length && direction === 'forward') {
+            if (((numberOfImagesOnScreen + 1 + picturesOffset) === images.length || numberOfImagesOnScreen >= images.length) && direction === 'forward') {
               return;
             }
 
