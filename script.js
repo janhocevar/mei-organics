@@ -200,8 +200,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     imagesPin = new ScrollMagic.Scene({
       triggerElement: '.fourth-section',
+      triggerHook: 0,
       duration: 600,
-      offset: 300,
+      offset: -80,
     })
       .setPin('.fourth-section')
       .addTo(controller);
