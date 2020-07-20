@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
   polyfill();
 
   /**
+   * Scroll to top of the page
+   */
+  var circleLogo = document.querySelector('.mei-organics-circle');
+  circleLogo.addEventListener('click', function(event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /**
    * Language selector
    */
   var languageSelectorEl = document.querySelector('.language-selector');

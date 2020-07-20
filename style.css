@@ -70,6 +70,36 @@ p {
   font-weight: 500;
 }
 
+.mei-organics-circle {
+  position: fixed;
+  right: 140px;
+  bottom: 140px;
+  width: 100px;
+  height: 100px;
+  background: #000;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FFF;
+  z-index: 40;
+  transition: all 100ms ease-in-out;
+}
+
+.mei-organics-circle:hover {
+  transition: all 100ms ease-in;
+  background: var(--color-main);
+}
+
+.mei-organics-circle:focus {
+  outline: none;
+}
+
+.mei-organics-circle img {
+  width: 65px;
+  height: 30px;
+}
+
 header {
   background: #000;
   height: var(--header-height);
@@ -1208,5 +1238,17 @@ footer {
 
   .language-selector {
     margin: 0;
+  }
+
+  .mei-organics-circle {
+    width: 50px;
+    height: 50px;
+    bottom: 24px;
+    right: 24px;
+  }
+
+  .mei-organics-circle img {
+    width: 35px;
+    height: 16px;
   }
 }
