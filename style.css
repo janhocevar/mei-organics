@@ -327,7 +327,7 @@ main {
 }
 
 .third-section {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .tabs-wrap {
@@ -362,7 +362,7 @@ main {
 
 .tabs-content {
   padding-top: 48px;
-  min-height: 356px;
+  min-height: 310px;
 }
 
 .tab-content {
@@ -405,7 +405,7 @@ main {
 .fifth-section,
 .sixth-section,
 .seventh-section {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .fourth-section img {
@@ -458,7 +458,8 @@ main {
   align-items: center;
 }
 
-.shop-section img {
+.shop-section img,
+.second-section-column img {
   width: 100%;
 }
 
@@ -941,6 +942,7 @@ footer {
   .shop-customizer {
     order: 2;
     padding: 80px 24px 0;
+    position: relative;
   }
 
   .perks {
@@ -1173,5 +1175,10 @@ footer {
 
   .shop-option-price {
     min-width: 60px;
+  }
+
+  .shop-customizer-mobile-breakpoint {
+    position: absolute;
+    top: -100px;
   }
 }

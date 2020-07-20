@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+  var isMobile = window.innerWidth <= 480;
+
   /**
    * Smoothscrool polyfill
    */
@@ -33,13 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
    * Add to cart buttons - scroll to shop section
    */
   var addToCartButtons = document.querySelectorAll('.btn-cart');
-  var shopSection = document.querySelector('.sixth-section');
+  var selector = isMobile ? '.shop-customizer-mobile-breakpoint' : '.sixth-section';
+  var scrollIntoViewBlock = isMobile ? 'start' : 'center';
+  var shopSection = document.querySelector(selector);
   addToCartButtons.forEach(function(button) {
     button.addEventListener('click', function(event){
       event.preventDefault();
       shopSection.scrollIntoView({
         behavior: 'smooth',
-        block: 'center'
+        block: scrollIntoViewBlock,
       });
     });
   });
