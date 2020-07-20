@@ -83,7 +83,7 @@ p {
   justify-content: center;
   border: 1px solid #FFF;
   z-index: 40;
-  transition: all 100ms ease-in-out;
+  opacity: 0;
 }
 
 .mei-organics-circle:hover {
@@ -331,8 +331,15 @@ main {
 }
 
 .second-section-top {
-  background: url('./section-black-start.svg') bottom center repeat-x;
-  height: 39px
+  background: url('./section-black-start.png') top center repeat-x;
+  background-size: cover;
+  height: 46px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .second-section-top {
+    background: url('./section-black-start@2x.png') top center repeat-x;
+  }
 }
 
 .second-section-content {
@@ -1058,12 +1065,10 @@ footer {
 
   .top-banner {
     position: relative;
-    justify-content: flex-start;
   }
 
   .top-banner-item:not(:last-child) {
     margin-right: 0;
-    margin-left: 24px;
   }
 
   .top-banner-item:nth-child(2) {

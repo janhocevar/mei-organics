@@ -188,6 +188,20 @@ document.addEventListener('DOMContentLoaded', function() {
     .setTween(bottomHeroTween)
     .addTo(controller);
 
+  if (isMobile) {
+    var circleLogoHiddenClass = 'mei-organics-circle--hidden';
+    circleLogo.classList.add(circleLogoHiddenClass);
+
+    var circleLogoShowTween = new TimelineMax()
+    .add([
+      TweenMax.fromTo('.mei-organics-circle', 2, { opacity: 0 }, { opacity: 1, ease: Linear.easeNone, immediateRender: false })
+    ]);
+
+    var circleLogoShow = new ScrollMagic.Scene({ triggerElement: '.first-section', duration: 100, offset: 300 })
+      .setTween(circleLogoShowTween)
+      .addTo(controller);
+  }
+
   /**
    * Shop quantity selector
    */
