@@ -133,14 +133,13 @@ header {
 .language-selector-active {
   width: 70px;
   height: 40px;
-  background: #FFF;
-  color: #000;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-main);
+  border: 1px solid transparent;
   transition: all 150ms ease-in-out;
+  color: #FFF;
 }
 
 .language-selector-active:hover {
@@ -148,6 +147,12 @@ header {
   color: #FFF;
   cursor: pointer;
   transition: all 150ms ease-in;
+}
+
+.language-selector--opened .language-selector-active {
+  background: #FFF;
+  border-color: var(--color-main);
+  color: #000;
 }
 
 .language-selector-dropdown {
