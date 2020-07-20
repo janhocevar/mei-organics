@@ -138,6 +138,7 @@ header {
   font-size: 14px;
   background: var(--color-main);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -398,7 +399,7 @@ main {
 
 .tabs-content {
   padding-top: 48px;
-  min-height: 310px;
+  min-height: 288px;
 }
 
 .tab-content {
@@ -425,11 +426,12 @@ main {
   padding-bottom: 24px;
 }
 
-.tab-content h3 {
-  font-size: 20px;
-  line-height: 26px;
-  padding-bottom: 24px;
-  font-weight: bold;
+.tab-content.vprasaj h2 {
+  padding: 20px 0;
+}
+
+.tab-content.vprasaj h2:first-child {
+  padding-top: 0;
 }
 
 .tab-content h3:not(:first-of-type) {
@@ -444,6 +446,12 @@ main {
   margin-bottom: 80px;
 }
 
+.sixth-section {
+  background: #FFF;
+  position: relative;
+  z-index: 30;
+}
+
 .fourth-section img {
   object-fit: cover;
   width: 100%;
@@ -454,6 +462,15 @@ main {
   gap: 30px;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 65px;
+  width: 100%;
+}
+
+.fourth-section-last-image-container {
+  position: relative;
+  top: -1200px;
+  margin-bottom: -1650px;
+  padding-bottom: 500px;
+  background: #FFF;
 }
 
 .fifth-section {
@@ -461,6 +478,8 @@ main {
   height: 224px;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 20;
 }
 
 .section-advantages {
@@ -563,13 +582,14 @@ main {
 
 .shop-option--previous-price {
   align-self: flex-end;
-  margin-bottom: 17px;
+  margin-bottom: 14px;
   font-size: 14px;
 }
 
 .shop-option--new-price {
   align-self: flex-end;
   font-weight: 600;
+  font-size: 18px;
 }
 
 .btn--add-to-cart {
@@ -713,6 +733,12 @@ main {
   width: 230px;
   background-size: cover;
   background-repeat: no-repeat;
+  transition: all 100ms ease-in-out;
+}
+
+.instagram-photo:hover {
+  transform: scale(1.02);
+  transition: all 100ms ease-in;
 }
 
 .instagram-photo--link {
@@ -813,6 +839,10 @@ main {
 .feedback-satisfaction-text {
   margin-top: 8px;
   font-size: 12px;
+}
+
+.single-feedback--hidden {
+  display: none;
 }
 
 .single-feedback-title {
@@ -1255,5 +1285,9 @@ footer {
   .mei-organics-circle img {
     width: 35px;
     height: 16px;
+  }
+
+  .fourth-section-last-image-container {
+    margin-bottom: -1700px;
   }
 }

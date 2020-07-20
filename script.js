@@ -199,6 +199,15 @@ document.addEventListener('DOMContentLoaded', function() {
       .addTo(controller);
   }
 
+  var imagesPinOffset = isMobile ? 100 : 400;
+  imagesPin = new ScrollMagic.Scene({
+    triggerElement: '.fourth-section',
+    duration: 1200,
+    offset: imagesPinOffset,
+  })
+    .setPin('.top-two-images')
+    .addTo(controller);
+
   /**
    * Shop quantity selector
    */
@@ -234,5 +243,20 @@ document.addEventListener('DOMContentLoaded', function() {
       var newActiveNavigationItem = document.querySelectorAll('.swipe-navigation-item')[index];
       newActiveNavigationItem.classList.add(activeNavigationItemClass);
     }
+  });
+
+  /**
+   * Show more feedbacks
+   */
+  var showMoreFeedbacksButton = document.querySelector('.btn--feedback');
+  var showMoreReviewHiddenClass = 'single-feedback--hidden';
+  var hiddenReviews = document.querySelectorAll('.' + showMoreReviewHiddenClass);
+
+  showMoreFeedbacksButton.addEventListener('click', function() {
+    hiddenReviews.forEach(function(el) {
+      el.classList.remove(showMoreReviewHiddenClass);
+    });
+
+    showMoreFeedbacksButton.remove();
   });
 });
