@@ -28,8 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
   /**
    * Animate hero product image
    */
-  var heroProduct = document.querySelector('.hero-product');
-  heroProduct.classList.add('hero-product--visible');
+  if (isMobile) {
+    setTimeout(addHeroClass, 1000);
+  } else {
+    addHeroClass();
+  }
+
+  function addHeroClass() {
+    var heroProduct = document.querySelector('.hero-product');
+    heroProduct.classList.add('hero-product--visible');
+  }
 
   /**
    * Add to cart buttons - scroll to shop section
