@@ -83,7 +83,6 @@ p {
   justify-content: center;
   border: 1px solid #FFF;
   z-index: 40;
-  opacity: 0;
 }
 
 .mei-organics-circle:hover {
@@ -1250,6 +1249,7 @@ footer {
     height: 50px;
     bottom: 24px;
     right: 24px;
+    opacity: 0;
   }
 
   .mei-organics-circle img {
