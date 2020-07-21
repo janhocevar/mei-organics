@@ -241,7 +241,7 @@ header {
   top: var(--header-height);
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 45;
 }
 
 .top-banner-icon {
