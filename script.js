@@ -168,6 +168,9 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         });
       }
+    })
+    .catch(function(error) {
+      console.log('Instagram Error', error);
     });
 
   /**
@@ -197,15 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var circleLogoShow = new ScrollMagic.Scene({ triggerElement: '.first-section', duration: 100, offset: 300 })
       .setTween(circleLogoShowTween)
       .addTo(controller);
-
-    // imagesPin = new ScrollMagic.Scene({
-    //   triggerElement: '.fourth-section',
-    //   triggerHook: 0,
-    //   duration: 600,
-    //   offset: -80,
-    // })
-    //   .setPin('.fourth-section')
-    //   .addTo(controller);
   }
 
   /**
