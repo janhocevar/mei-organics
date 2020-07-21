@@ -1291,4 +1291,8 @@ footer {
     width: 35px;
     height: 16px;
   }
+
+  .hero-background {
+    height: 80vh;
+  }
 }
