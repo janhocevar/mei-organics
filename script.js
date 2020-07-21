@@ -198,14 +198,14 @@ document.addEventListener('DOMContentLoaded', function() {
       .setTween(circleLogoShowTween)
       .addTo(controller);
 
-    imagesPin = new ScrollMagic.Scene({
-      triggerElement: '.fourth-section',
-      triggerHook: 0,
-      duration: 600,
-      offset: -80,
-    })
-      .setPin('.fourth-section')
-      .addTo(controller);
+    // imagesPin = new ScrollMagic.Scene({
+    //   triggerElement: '.fourth-section',
+    //   triggerHook: 0,
+    //   duration: 600,
+    //   offset: -80,
+    // })
+    //   .setPin('.fourth-section')
+    //   .addTo(controller);
   }
 
   /**
