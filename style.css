@@ -37,6 +37,14 @@ strong {
   transform: translateY(5px);
 }
 
+.hero-background {
+  background: url('./mei-organics-hero.jpg');
+  height: 700px;
+  background-size: 525px 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .hero-product--visible {
   opacity: 1;
   visibility: visible;
@@ -339,6 +347,10 @@ main {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .second-section-top {
     background: url('./section-black-start@2x.png') top center repeat-x;
+  }
+
+  .hero-background {
+    background-image: url('./mei-organics-hero@2x.jpg');
   }
 }
 
