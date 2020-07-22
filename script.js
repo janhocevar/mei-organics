@@ -206,10 +206,14 @@ document.addEventListener('DOMContentLoaded', function() {
    */
   var shopOptions = document.querySelectorAll('.shop-option');
   var selectedClass = 'shop-option--selected';
+  var addToCartButton = document.querySelector('.btn--add-to-cart');
   shopOptions.forEach(function(option) {
     option.addEventListener('click', function(el) {
       var selectedEl = document.querySelector('.' + selectedClass);
       selectedEl.classList.remove(selectedClass);
+      var quantity = el.target.dataset.quantity;
+      var addToCartLink = `https://www.sen-shop.si/kosarica/?add-to-cart=21345&quantity=${quantity}`;
+      addToCartButton.href = addToCartLink;
 
       el.target.classList.add(selectedClass);
     });
