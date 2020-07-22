@@ -432,6 +432,10 @@ main {
   margin-bottom: 10px;
 }
 
+.tab-content ul li span {
+  font-weight: 600;
+}
+
 .tab-content h2 {
   font-size: 20px;
   line-height: 26px;
