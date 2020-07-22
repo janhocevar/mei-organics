@@ -91,87 +91,86 @@ document.addEventListener('DOMContentLoaded', function() {
   /**
    * Instagram
    */
-  fetch('https://www.instagram.com/mei_organics/?__a=1')
-    .then(function(response) { return response.json(); })
-    .then(function(response) {
-      if (response && response.graphql && response.graphql.user) {
-        var images = response.graphql.user.edge_owner_to_timeline_media.edges.map(function(image) {
-          return {
-            image: image.node.display_url,
-            url: image.node.shortcode,
-          };
-        }).slice(0, 20);
+  getIGPhotos();
+  async function getIGPhotos() {
+    var igRequest = await fetch('https://www.instagram.com/mei_organics/?__a=1');
+    var instagram = await igRequest.json();
+    
+    if (instagram && instagram.graphql && instagram.graphql.user) {
+      var images = instagram.graphql.user.edge_owner_to_timeline_media.edges.map(function(image) {
+        return {
+          image: image.node.display_url,
+          url: image.node.shortcode,
+        };
+      }).slice(0, 20);
 
-        var offsetSize = 230;
-        var numberOfImagesOnScreen = Math.floor(window.innerWidth / offsetSize);
+      var offsetSize = 230;
+      var numberOfImagesOnScreen = Math.floor(window.innerWidth / offsetSize);
 
-        var instagramPhotosEl = document.querySelector('.instagram-feed');
-        var instagramPhotosInnerEl = document.querySelector('.instagram-feed--inner');
+      var instagramPhotosEl = document.querySelector('.instagram-feed');
+      var instagramPhotosInnerEl = document.querySelector('.instagram-feed--inner');
 
-        images.forEach(function(image) {
-          var newDiv = document.createElement('a');
-          newDiv.setAttribute('href', 'https://www.instagram.com/p/' + image.url);
-          newDiv.setAttribute('target', '_blank');
-          newDiv.classList.add('instagram-photo');
-          newDiv.style.backgroundImage = 'url(' + image.image + ')';
+      images.forEach(function(image) {
+        var newDiv = document.createElement('a');
+        newDiv.setAttribute('href', 'https://www.instagram.com/p/' + image.url);
+        newDiv.setAttribute('target', '_blank');
+        newDiv.classList.add('instagram-photo');
+        newDiv.style.backgroundImage = 'url(' + image.image + ')';
 
-          instagramPhotosInnerEl.appendChild(newDiv);
+        instagramPhotosInnerEl.appendChild(newDiv);
+      });
+
+      instagramPhotosInnerEl.style.width = images.length * offsetSize + 'px';
+
+      var instagramLoadingEl = document.querySelector('.loading-instagram-photos');
+      instagramLoadingEl.classList.add('loading-instagram-photos--hidden');
+
+      instagramPhotosEl.classList.add('instagram-feed--loaded');
+
+      /**
+       * Handlers
+       */
+      var handles = document.querySelectorAll('.instagram-handle');
+      var picturesOffset = 0;
+      handles.forEach(function(handleEl) {
+        handleEl.addEventListener('click', function(el) {
+          var direction = el.target.dataset.direction;
+
+          /**
+           * If on first picture and back is clicked, ignore
+           */
+          if (picturesOffset === 0 && direction === 'back') {
+            return;
+          }
+
+          /**
+           * If on last picture, return
+           */
+          if (((numberOfImagesOnScreen + 1 + picturesOffset) === images.length || numberOfImagesOnScreen >= images.length) && direction === 'forward') {
+            return;
+          }
+
+          /**
+           * Get transformX offset
+           */
+          var feedStyle = window.getComputedStyle(instagramPhotosInnerEl);
+          var matrix = new WebKitCSSMatrix(feedStyle.webkitTransform);
+          var offsetx = matrix.m41;
+          
+
+          if (direction === 'forward') {
+            offsetx -= offsetSize;
+            picturesOffset++;
+          } else if (direction === 'back') {
+            offsetx += offsetSize;
+            picturesOffset--;
+          }
+          
+          instagramPhotosInnerEl.style.transform = 'translateX(' + offsetx + 'px)';
         });
-
-        instagramPhotosInnerEl.style.width = images.length * offsetSize + 'px';
-
-        var instagramLoadingEl = document.querySelector('.loading-instagram-photos');
-        instagramLoadingEl.classList.add('loading-instagram-photos--hidden');
-
-        instagramPhotosEl.classList.add('instagram-feed--loaded');
-
-        /**
-         * Handlers
-         */
-        var handles = document.querySelectorAll('.instagram-handle');
-        var picturesOffset = 0;
-        handles.forEach(function(handleEl) {
-          handleEl.addEventListener('click', function(el) {
-            var direction = el.target.dataset.direction;
-
-            /**
-             * If on first picture and back is clicked, ignore
-             */
-            if (picturesOffset === 0 && direction === 'back') {
-              return;
-            }
-
-            /**
-             * If on last picture, return
-             */
-            if (((numberOfImagesOnScreen + 1 + picturesOffset) === images.length || numberOfImagesOnScreen >= images.length) && direction === 'forward') {
-              return;
-            }
-
-            /**
-             * Get transformX offset
-             */
-            var feedStyle = window.getComputedStyle(instagramPhotosInnerEl);
-            var matrix = new WebKitCSSMatrix(feedStyle.webkitTransform);
-            var offsetx = matrix.m41;
-            
-
-            if (direction === 'forward') {
-              offsetx -= offsetSize;
-              picturesOffset++;
-            } else if (direction === 'back') {
-              offsetx += offsetSize;
-              picturesOffset--;
-            }
-            
-            instagramPhotosInnerEl.style.transform = 'translateX(' + offsetx + 'px)';
-          });
-        });
-      }
-    })
-    .catch(function(error) {
-      console.log('Instagram Error', error);
-    });
+      });
+    }
+  }
 
   /**
    * Viewport Animations (ScrollMagic)
