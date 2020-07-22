@@ -1016,8 +1016,10 @@ footer {
     flex-direction: column;
   }
 
-  .top-two-images {
+  .top-two-images,
+  .second-section-row {
     margin-bottom: 10px;
+    gap: 0;
   }
 
   .top-two-images img {
