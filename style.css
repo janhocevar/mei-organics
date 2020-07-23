@@ -411,7 +411,7 @@ main {
 
 .tabs-content {
   padding-top: 48px;
-  min-height: 288px;
+  min-height: 330px;
 }
 
 .tab-content {
@@ -429,7 +429,7 @@ main {
   font-size: 18px;
   line-height: 24px;
   padding-left: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 24px;
 }
 
 .tab-content ul li span {
@@ -437,13 +437,15 @@ main {
 }
 
 .tab-content h2 {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 26px;
   padding-bottom: 24px;
+  font-weight: bold;
 }
 
 .tab-content.vprasaj h2 {
-  padding: 20px 0;
+  padding: 20px 0 5px;
+  font-weight: bold;
 }
 
 .tab-content.vprasaj h2:first-child {
