@@ -456,6 +456,10 @@ main {
   margin-top: 24px;
 }
 
+.tab-content p {
+  font-weight: 400;
+}
+
 .third-section,
 .fourth-section,
 .fifth-section,
