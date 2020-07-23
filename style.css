@@ -443,6 +443,10 @@ main {
   font-weight: bold;
 }
 
+.tab-content p small {
+  font-size: 14px;
+}
+
 .tab-content.vprasaj h2 {
   padding: 20px 0 5px;
   font-weight: bold;
